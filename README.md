@@ -1,2 +1,2 @@
 # react-native-base-architecture
-## Nursebook
+## Nursebook architecture
