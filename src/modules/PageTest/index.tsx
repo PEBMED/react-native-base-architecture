@@ -1,5 +1,14 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, TouchableOpacity, Text, Alert, View, TextInput } from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Alert,
+  View,
+  TextInput,
+} from 'react-native';
 
 const App = () => {
   const [login, setLogin] = React.useState({ email: '', password: '' });
@@ -10,14 +19,16 @@ const App = () => {
       <StatusBar barStyle="dark-content" />
       <View style={styles.contain}>
         <View style={styles.texts}>
-          <Text style={styles.title}>Acesse sua conta e tenha os melhores conteúdos de Enfermagem.</Text>
+          <Text style={styles.title}>
+            Acesse sua conta e tenha os melhores conteúdos de Enfermagem.
+          </Text>
           <Text style={styles.text}>
-            Caso você já tenha cadastrado em algum produto da PEBMED
-            (Whitebook ou Portal), basta acessar com seu login e senha.
+            Caso você já tenha cadastrado em algum produto da PEBMED (Whitebook
+            ou Portal), basta acessar com seu login e senha.
           </Text>
           <View style={styles.inputs}>
             <TextInput
-              testID='email'
+              testID="email"
               style={styles.input}
               placeholder="E-mail"
               placeholderTextColor="#000"
@@ -27,7 +38,7 @@ const App = () => {
               value={login.email}
             />
             <TextInput
-              testID='password'
+              testID="password"
               style={styles.input}
               placeholder="Senha"
               placeholderTextColor="#000"
@@ -39,14 +50,19 @@ const App = () => {
           </View>
         </View>
         <View style={styles.buttons}>
-          <TouchableOpacity testID='button' onPress={() => Alert.alert(JSON.stringify(login))} style={styles.button}>
+          <TouchableOpacity
+            testID="button"
+            onPress={() => Alert.alert(JSON.stringify(login))}
+            style={styles.button}>
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.textContain}>
             <Text style={styles.textButton}>Esqueci a senha</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.textContain}>
-            <Text style={styles.textButton}>Ainda com problemas? Clique aqui</Text>
+            <Text style={styles.textButton}>
+              Ainda com problemas? Clique aqui
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -62,11 +78,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   texts: {
     marginTop: 50,
-    width: '100%'
+    width: '100%',
   },
   title: {
     fontWeight: '500',
@@ -76,20 +92,20 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     textAlign: 'center',
-    marginTop: 20
+    marginTop: 20,
   },
   inputs: {
-    width: '100%'
+    width: '100%',
   },
   input: {
     borderBottomWidth: 1,
     borderBottomColor: '#b5b5b5',
     marginTop: 20,
     paddingVertical: 10,
-    fontSize: 14
+    fontSize: 14,
   },
   buttons: {
-    width: '100%'
+    width: '100%',
   },
   button: {
     backgroundColor: '#46106b',
@@ -97,20 +113,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 50,
-    width: '100%'
+    width: '100%',
   },
   buttonText: {
     color: '#FFF',
-    fontSize: 16
+    fontSize: 16,
   },
   textContain: {
-    width: '100%'
+    width: '100%',
   },
   textButton: {
     color: '#46106b',
     fontSize: 16,
     textAlign: 'center',
-    marginTop: 12
+    marginTop: 12,
   },
 });
 
