@@ -1,4 +1,4 @@
-describe('Example', () => {
+describe('App', () => {
   beforeAll(async () => {
     await device.launchApp();
   });
@@ -7,8 +7,9 @@ describe('Example', () => {
     await device.reloadReactNative();
   });
 
-  it('should have welcome screen', async () => {
+  it('Clicar no botao entrar', async () => {
     await element(by.id('alert')).tap();
+    await element(by.text('OK')).tap();
   });
 
 });
