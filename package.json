@@ -8,12 +8,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "pod": "pod-install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && yarn test"
-    }
+    "pod": "pod-install",
+    "prepare": "husky install",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@redux-saga/testing-utils": "^1.1.3",
