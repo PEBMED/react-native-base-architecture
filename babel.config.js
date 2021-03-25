@@ -19,6 +19,7 @@ module.exports = {
         alias: {
           '@core': './src/core',
           '@modules': './src/modules',
+          '@navigation': './src/navigation',
         },
       },
     ],
