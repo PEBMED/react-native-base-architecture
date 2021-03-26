@@ -1,13 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
-// import { Container } from './styles';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Home: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
-    // eslint-disable-next-line react-native/no-inline-styles
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home</Text>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('pageTest')}
+        style={{
+          width: 100,
+          height: 50,
+          backgroundColor: '#999',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <Text>Press</Text>
+      </TouchableOpacity>
     </View>
   );
 };
