@@ -1,38 +1,42 @@
-export class CredentialDevice {
+import { BaseEntity } from './BaseEntity';
+
+export class CredentialDeviceEntity extends BaseEntity {
   constructor(
-    private so: String,
-    private dispositivo: String,
-    private soVersao: String,
-    private deviceId: String,
-    private appVersao: String,
-    private firebaseDeviceToken?: String,
-  ) {}
-
-  public getSO() {
-    return this.so;
+    private _so: String,
+    private _dispositivo: String,
+    private _soVersao: String,
+    private _deviceId: String,
+    private _appVersao: String,
+    private _firebaseDeviceToken?: String,
+  ) {
+    super();
   }
 
-  public getDispositivo() {
-    return this.dispositivo;
+  get so() {
+    return this._so;
   }
 
-  public getSoVersao() {
-    return this.soVersao;
+  get dispositivo() {
+    return this._dispositivo;
   }
 
-  public getDeviceId() {
-    return this.deviceId;
+  get soVersao() {
+    return this._soVersao;
   }
 
-  public getAppVersao() {
-    return this.appVersao;
+  get deviceId() {
+    return this._deviceId;
   }
 
-  public setFirebaseDeviceToken(token: String) {
-    this.firebaseDeviceToken = token;
+  get appVersao() {
+    return this._appVersao;
   }
 
-  public getFirebaseDeviceToken() {
-    return this.firebaseDeviceToken;
+  get firebaseDeviceToken() {
+    return this._firebaseDeviceToken;
+  }
+
+  set firebaseDeviceToken(val: String | undefined) {
+    this._firebaseDeviceToken = val;
   }
 }

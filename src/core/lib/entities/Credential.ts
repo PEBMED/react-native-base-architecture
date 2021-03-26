@@ -1,35 +1,35 @@
-import { CredentialDevice } from './CredentialDevice';
+import { CredentialDeviceEntity } from './CredentialDevice';
 
-export class Credential {
+export class CredentialEntity {
   constructor(
     private _codApp: String,
     private _email: String,
     private _senha: String,
-    private _device?: CredentialDevice,
+    private _device?: CredentialDeviceEntity,
     private _codigo?: String,
   ) {}
 
-  setDevice(device: CredentialDevice) {
-    this._device = device;
-  }
-
-  getDevice(): CredentialDevice | null {
-    return this._device || null;
-  }
-
-  getCodApp() {
+  get codApp() {
     return this._codApp;
   }
 
-  getEmail() {
+  get email() {
     return this._email;
   }
 
-  getSenha() {
+  get senha() {
     return this._senha;
   }
 
-  getCodigo() {
+  get device() {
+    return this._device;
+  }
+
+  set device(val: CredentialDeviceEntity | undefined) {
+    this._device = val;
+  }
+
+  get codigo() {
     return this._codigo;
   }
 }
