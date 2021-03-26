@@ -17,9 +17,21 @@ module.exports = {
           '.json',
         ],
         alias: {
-          '@core': './src/core',
+          '@core': './src/core/lib',
           '@modules': './src/modules',
+          '@config': './src/config',
         },
+      },
+    ],
+    [
+      'module:react-native-dotenv',
+      {
+        moduleName: '@env',
+        path: '.env',
+        blacklist: null,
+        whitelist: null,
+        safe: false,
+        allowUndefined: true,
       },
     ],
   ],
