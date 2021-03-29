@@ -20,6 +20,7 @@ module.exports = {
           '@core': './src/core/lib',
           '@modules': './src/modules',
           '@config': './src/config',
+          '@navigation': './src/navigation',
         },
       },
     ],

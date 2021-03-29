@@ -1,14 +1,13 @@
 import React from 'react';
-
+import 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
-// import Home from '@modules/Home';
-import PageTest from '@modules/PageTest';
 import configureStore from '@core/redux';
+import Router from '@navigation/index';
 
 const App = () => {
   return (
     <Provider store={configureStore()}>
-      <PageTest />
+      <Router />
     </Provider>
   );
 };
