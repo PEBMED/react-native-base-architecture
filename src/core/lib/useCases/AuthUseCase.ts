@@ -17,7 +17,7 @@ export class AuthUseCase {
       throw new Error('CredentialDeviceEntity is not defined');
     }
 
-    const data: CredentialRequest = {
+    const credentialRequest: CredentialRequest = {
       email: credential.email,
       senha: credential.senha,
       cod_app: credential.codApp,
@@ -31,9 +31,9 @@ export class AuthUseCase {
     };
 
     try {
-      return await this.credentialService.signIn(data);
+      return await this.credentialService.signIn(credentialRequest);
     } catch (err) {
-      if (err.hasOwnProperty('response')) {
+      if (err?.response) {
         throw new AuthApiHttpError(err);
       }
       throw err;
