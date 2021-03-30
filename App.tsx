@@ -1,14 +1,15 @@
 import React from 'react';
-import 'react-native-gesture-handler';
-import { Provider } from 'react-redux';
-import configureStore from '@core/redux';
+// import { Provider } from 'react-redux';
+// import configureStore from '@core/redux';
 import Router from '@navigation/index';
+
+import AuthContextProvider from '@core/contexts/AuthContextProvider';
 
 const App = () => {
   return (
-    <Provider store={configureStore()}>
+    <AuthContextProvider>
       <Router />
-    </Provider>
+    </AuthContextProvider>
   );
 };
 
