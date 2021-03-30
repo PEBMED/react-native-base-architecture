@@ -1,17 +1,22 @@
 import React from 'react';
+
 import {
+  ActivityIndicator,
   SafeAreaView,
   StatusBar,
   StyleSheet,
   TouchableOpacity,
   Text,
-  Alert,
   View,
   TextInput,
 } from 'react-native';
 
-const App = () => {
+import { useAuthContext } from '@core/contexts/AuthContextProvider';
+
+const PageTest = () => {
   const [login, setLogin] = React.useState({ email: '', password: '' });
+
+  const { state, actions } = useAuthContext();
 
   const change = (i: string, e: string) => setLogin({ ...login, [i]: e });
   return (
@@ -52,9 +57,13 @@ const App = () => {
         <View style={styles.buttons}>
           <TouchableOpacity
             testID="button"
-            onPress={() => Alert.alert(JSON.stringify(login))}
+            onPress={() => actions?.handleSignIn(login.email, login.password)}
             style={styles.button}>
-            <Text style={styles.buttonText}>Entrar</Text>
+            {state?.signInLoading ? (
+              <ActivityIndicator />
+            ) : (
+              <Text style={styles.buttonText}>Entrar</Text>
+            )}
           </TouchableOpacity>
           <TouchableOpacity style={styles.textContain}>
             <Text style={styles.textButton}>Esqueci a senha</Text>
@@ -130,4 +139,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default PageTest;
